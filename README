@@ -1,0 +1,48 @@
+This is a phonegap-android-plugin for displaying status bar notifications in an android device.
+The code may be a little specific according to my needs, but can still be used in most general cases. (And you can always modify it :) )
+
+
+STEPS
+
+Add a flag to the activity in AndroidManifest.xml inside the activity tag.
+//<activity ... android:launchMode="singleTop">
+
+Add the following method to your java file. This lets the javascript code to continue running when the app goes into the background.
+Note: The latest version of phonegap allows this by default, so skip this step if using the latest phonegap.
+//@override
+//public void onPause()
+//{
+//    super.onPause();
+//    super.appView.loadUrl("javascript:try{PhoneGap.onResume.fire();}catch(e){};");
+//    super.appView.resumeTimers();
+//}
+
+
+Use either of the methods:
+Method 1 (no modifications to phonegap code) :
+
+    Add the SystemNotification.java file to "src/your_package_name/" folder
+
+    Add following to the java file that is being created for you, in the onCreate method
+//    super.addService("systemNotification","com.your_package_name.SystemNotification");
+
+    Append the contents of the SystemNotification.js file to the phonegap.js OR Add this file in your index.html after adding the phonegap.js
+
+
+Method 2 (modify the phonegap libraries) : Files need to be added to the phonegap framework and libraries are re-built and then added to your project folders.
+
+    Add SystemNotification.java to the directory where all other phonegap java files are located (framework/src/phonegap/)
+    Add SystemNotification.js to the directory where all other js files are located (framework/assets/www/js/)
+
+    Add the service in the DroidGap.java, where other services are being added
+//    super.addService("systemNotification","com.phonegap.SystemNotification");
+
+    Build phonegap.jar and phonegap.js and replace the old files in your project with these new ones.
+
+
+
+USAGE
+    All the methods of SystemNotification.js can be called from you javascript code as:
+    navigator.systemNotification.<function_name>(...);
+
+    I used dojo.connect() to connect to the "onBackground" and "onForeground" events, to fire my required functions.
