@@ -17,6 +17,10 @@ Note: The latest version of phonegap allows this by default, so skip this step i
 //    super.appView.resumeTimers();
 //}
 
+Make the following change to the SystemNotification.java:
+    In the method "createStatusBarNotification", look for a line
+	// Intent notificationIntent = new Intent(this.ctx, myActivityClass.class);
+    Change the "myActivityClass.class" to <your_class_name>.class
 
 Use either of the methods:
 Method 1 (no modifications to phonegap code) :
