@@ -56,7 +56,7 @@ public class SystemNotification extends Plugin {
         note = new Notification(android.R.drawable.btn_star_big_on, tickerText, System.currentTimeMillis() );
 	//change the icon
         
-	Intent notificationIntent = new Intent(this.ctx, pwm.class);
+	Intent notificationIntent = new Intent(this.ctx, myActivityClass.class);
         notificationIntent.setAction(Intent.ACTION_MAIN);
         notificationIntent = notificationIntent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
         contentIntent = PendingIntent.getActivity(this.ctx, 0, notificationIntent, 0);
