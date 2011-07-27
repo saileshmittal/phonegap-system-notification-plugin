@@ -27,7 +27,7 @@ Method 1 (no modifications to phonegap code) :
 
     Add the SystemNotification.java file to "src/your_package_name/" folder
 
-    Add following to the java file that is being created for you, in the onCreate method
+    Add following to the java file that is being created for you, in the onCreate method. Make sure to call this AFTER the super.onCreate(...) call.
 //    super.addService("systemNotification","com.your_package_name.SystemNotification");
 
     Append the contents of the SystemNotification.js file to the phonegap.js OR Add this file in your index.html after adding the phonegap.js
