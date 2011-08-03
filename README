@@ -1,1 +1,4 @@
 PhoneGap plugin for system notification
+
+This code is completely dependent on the PhoneGap project, also hosted on
+GitHub ( github.com/phonegap/phonegap )
