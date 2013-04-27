@@ -1,3 +1,9 @@
+Note:
+
+This repo is no longer managed. You may find what you are looking for here:
+https://github.com/phonegap/phonegap-plugins/tree/master/Android/StatusBarNotification
+
+
 PhoneGap plugin for system notification
 
 This code is completely dependent on the PhoneGap project, also hosted on
