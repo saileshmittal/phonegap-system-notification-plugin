@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import com.phonegap.api.Plugin;
 import com.phonegap.api.PluginResult;
-import org.json.JSONArray;
 
 public class SystemNotification extends Plugin {
 
